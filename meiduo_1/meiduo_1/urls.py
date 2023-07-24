@@ -17,6 +17,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# 日志
+from django.http import HttpResponse
+def log(request):
+    # 方便分析问题
+#     日志级别：
+    #     DEBUG：排查故障时使用的低级别系统信息
+    #     INFO：一般的系统信息
+    #     WARNING：描述系统发生了一些小问题的信息
+    #     ERROR：描述系统发生了大问题的信息
+    #     CRITICAL：描述系统发生严重问题的信息
+    import logging
+    logger=logging.getLogger('django')
+    logger.info('info~~~~~')
+    logger.warning('waring~~~')
+
+    return HttpResponse('log')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('log/', log),
 ]
+
+
+
