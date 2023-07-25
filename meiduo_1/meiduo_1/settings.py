@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-byzmn3u00i-_q&ab#pw^$zro7vn+v=4rb!bh9t!l@4ox+qwkor
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.meiduo.site','127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps',
+    'apps.users', # 注册子应用
+    'apps.users.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
